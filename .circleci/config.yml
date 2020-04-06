@@ -16,7 +16,7 @@ jobs:
       - run:
           command: |
                    echo codecoverage
-                   echo ${PASS_SECRET}
+                   echo ${SHARE_ENV}
                    echo "No secrets"
   binary-size:
     docker:
