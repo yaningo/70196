@@ -16,8 +16,8 @@ jobs:
       - run:
           command: |
                    echo codecoverage
-                   echo ${SHARE_ENV}
-                   echo "Not passing secret"
+                   echo $SHARE_ENV
+                   echo "passing secret"
   binary-size:
     docker:
       - image: circleci/node
