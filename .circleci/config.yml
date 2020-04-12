@@ -17,8 +17,9 @@ jobs:
           command: |
                    echo codecoverage
                    echo "passing secret"
-                   echo 'export SHARE_ENV' >> $BASH_ENV
+                   echo 'export {SHARE_ENV}' >> $BASH_ENV
                    echo ${SHARE_ENV}
+                   echo $SHARE_ENV
   binary-size:
     docker:
       - image: circleci/node
