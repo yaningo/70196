@@ -1,12 +1,4 @@
-version: 2.1
-
-parameters:
-  foo:
-    type: boolean
-    default: true
-  bar:
-    type: boolean
-    default: false
+version: 2
 
 jobs:
   codecoverage:
@@ -20,26 +12,3 @@ jobs:
                    echo 'export {SHARE_ENV}' >> $BASH_ENV
                    echo ${SHARE_ENV}
                    echo $SHARE_ENV
-  binary-size:
-    docker:
-      - image: circleci/node
-    steps:
-      - run:
-          command: |
-                   echo binary-size
-workflows:
-  version: 2
-  android-navigation:
-    when: << pipeline.parameters.bar >>
-    jobs:
-      - codecoverage
-      - binary-size:
-          requires: 
-            - codecoverage
-  android-maps:
-    when: << pipeline.parameters.foo >>
-    jobs:
-      - binary-size    
-      - codecoverage:
-          requires:
-            - binary-size
