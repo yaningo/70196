@@ -1,14 +1,40 @@
 version: 2
 
 jobs:
-  build:
+  premier:
     docker:
       - image: circleci/node
     steps:
       - run:
           command: |
-                   echo codecoverage
-                   echo "passing secret"
-                   echo 'export {SHARE_ENV}' >> $BASH_ENV
-                   echo ${SHARE_ENV}
-                   echo $SHARE_ENV
+                   echo job1
+                   
+  deuxieme:
+    docker:
+      - image: circleci/node
+    steps:
+      - run:
+          command: |
+                   echo job2
+ 
+  troisieme:
+    docker:
+      - image: circleci/node
+    steps:
+      - run:
+          command: |
+                   echo job3
+                                     
+workflows:
+  version: 2
+  daily:
+    jobs:
+      - premier
+
+  sync:
+    jobs:
+      - deuxieme
+      
+  thirdly:
+    jobs:
+      - troisieme
