@@ -27,14 +27,14 @@ jobs:
                                      
 workflows:
   version: 2
-  monday:
+  papa:
     jobs:
       - premier
 
-  tuesday:
+  tata:
     jobs:
       - deuxieme
       
-  wetday:
+  lala:
     jobs:
       - troisieme
