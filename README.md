@@ -1,4 +1,4 @@
 # 70196
 Do you read me?
 
-A change
+Only build PR is ON
